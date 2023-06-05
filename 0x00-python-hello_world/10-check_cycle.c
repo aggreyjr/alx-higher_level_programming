@@ -1,0 +1,28 @@
+#include "lists.h"
+
+/**
+ * check_cycle - checks for cycles in singly linked lists
+ * @list: a pointer that connects to the beginning of a node
+ * Return: 0 for no cycle, 1 cycle
+ */
+
+int check_cycle(listint_t *list)
+{
+	listint_t *current, *check;
+
+	if (list == NULL || list->next == NULL)
+		return (0);
+	current = list;
+	check = current->next;
+
+	while (current != NULL && check->next != NULL
+		&& check->next->next != NULL)
+	{
+		if (current == check)
+			return (1);
+		current = current->next;
+		check = check->next->next;
+	}
+	return (0);
+}
+
