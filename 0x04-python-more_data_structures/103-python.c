@@ -3,20 +3,20 @@
 
 /**
  * print_python_list - printing of  python list
- * @b: Python Object
+ * @p: Python Object
  * Return: Nothing
  */
-void print_python_list(PyObject *b)
+void print_python_list(PyObject *p)
 {
-	(void)b;
+	(void)p;
 }
 
 /**
  * print_python_bytes - printing of python bytes
- * @b: Python Object
+ * @p: Python Object
  * Return: Nothing
  */
-void print_python_bytes(PyObject *b)
+void print_python_bytes(PyObject *p)
 {
-	(void)b;
+	(void)p;
 }
