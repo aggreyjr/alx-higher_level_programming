@@ -2,9 +2,8 @@
 
 import sys
 
-def safe_function(fct, *args):
-    """safe execution of a funct"""
 
+def safe_function(fct, *args):
     try:
         result = fct(*args)
         return (result)

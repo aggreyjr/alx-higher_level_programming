@@ -1,13 +1,14 @@
-#include <python.h>
+#include <Python.h>
 
 void print_python_list(PyObject *p);
 void print_python_bytes(PyObject *p);
 void print_python_float(PyObject *p);
+
 /**
- * print_python_list - print basic information about python lists.
- * @p: a pyobject list object
+ * print_python_list - Prints basic info about Python lists.
+ * @p: A PyObject list object.
  */
-void print_python_list(PyObject *p);
+void print_python_list(PyObject *p)
 {
 	Py_ssize_t size, alloc, i;
 	const char *type;
@@ -22,16 +23,17 @@ void print_python_list(PyObject *p);
 	printf("[*] Python list info\n");
 	if (strcmp(p->ob_type->tp_name, "list") != 0)
 	{
-		printf(" [ERROR] Invalid List Object\n");
+		printf("  [ERROR] Invalid List Object\n");
 		return;
 	}
-	print("[*] Size of the Python List = %ld\n", size);
+
+	printf("[*] Size of the Python List = %ld\n", size);
 	printf("[*] Allocated = %ld\n", alloc);
 
 	for (i = 0; i < size; i++)
 	{
-		type = list->ob_item[i]->_type->tp_name;
-		printf("Elements %ld: %s\n", i, type);
+		type = list->ob_item[i]->ob_type->tp_name;
+		printf("Element %ld: %s\n", i, type);
 		if (strcmp(type, "bytes") == 0)
 			print_python_bytes(list->ob_item[i]);
 		else if (strcmp(type, "float") == 0)
@@ -40,10 +42,9 @@ void print_python_list(PyObject *p);
 }
 
 /**
- * print_python_bytes - Print basic information about Python byte objects.
+ * print_python_bytes - Prints basic info about Python byte objects.
  * @p: A PyObject byte object.
  */
-
 void print_python_bytes(PyObject *p)
 {
 	Py_ssize_t size, i;
@@ -54,8 +55,8 @@ void print_python_bytes(PyObject *p)
 	printf("[.] bytes object info\n");
 	if (strcmp(p->ob_type->tp_name, "bytes") != 0)
 	{
-printf("  [ERROR] Invalid Bytes Object\n");
-	return;
+		printf("  [ERROR] Invalid Bytes Object\n");
+		return;
 	}
 
 	printf("  size: %ld\n", ((PyVarObject *)p)->ob_size);
@@ -101,4 +102,3 @@ void print_python_float(PyObject *p)
 	printf("  value: %s\n", buffer);
 	PyMem_Free(buffer);
 }
-
