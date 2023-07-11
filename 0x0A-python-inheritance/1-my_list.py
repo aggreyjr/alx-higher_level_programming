@@ -1,14 +1,10 @@
 #!/usr/bin/python3
-"""
-This is the "1-my_list" module.
-The 1-my_list module supplies one function, my-list.
-"""
+"""Defines an inherited list class MyList."""
 
 
 class MyList(list):
-    """Mylist class based upon list"""
+    """Implements sorted printing for the built-in list class."""
 
     def print_sorted(self):
-        """Prints the list, but sorted (ascending sort)."""
-        list = self.copy()
-        print(sorted(list))
+        """Print a list in sorted ascending order."""
+        print(sorted(self))

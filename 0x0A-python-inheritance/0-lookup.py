@@ -1,9 +1,7 @@
 #!/usr/bin/python3
-"""
-This is the "0-lookup" module.
-The 0-lookup module supplies one function, lookup.
-"""
+"""Defines an object attribute lookup function."""
 
 
 def lookup(obj):
-    return dir(obj)
+    """Return a list of an object's available attributes."""
+    return (dir(obj))
