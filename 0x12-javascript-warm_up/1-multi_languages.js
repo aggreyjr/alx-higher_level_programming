@@ -1,8 +1,8 @@
 #!/usr/bin/node
-
-/**
- * a script that prints three lines
- */
-console.log('C is fun');
-console.log('Python is cool');
-console.log('Javascript is amazing');
+// prints 3 lines
+const myVar1 = 'C is fun';
+const myVar2 = 'Python is cool';
+const myVar3 = 'JavaScript is amazing';
+console.log(myVar1);
+console.log(myVar2);
+console.log(myVar3);
